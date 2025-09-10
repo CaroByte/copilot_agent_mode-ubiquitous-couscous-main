@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { useState } from 'react';
+import CartIcon from './CartIcon';
 
 export default function Navigation() {
   const { isLoggedIn, isAdmin, logout } = useAuth();
@@ -83,6 +84,7 @@ export default function Navigation() {
                 </svg>
               )}
             </button>
+            <CartIcon />
             {isLoggedIn ? (
               <>
                 <span className={`${darkMode ? 'text-light' : 'text-gray-700'} text-sm transition-colors`}>
