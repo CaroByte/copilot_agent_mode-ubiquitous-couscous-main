@@ -297,9 +297,10 @@ export default function Cart() {
               {/* Checkout Button */}
               <button
                 className="w-full mt-6 bg-primary hover:bg-accent text-white py-3 px-4 rounded-md font-medium transition-colors duration-300"
-                onClick={() => alert('Checkout functionality would be implemented here')}
+                disabled
+                title="Checkout functionality coming soon"
               >
-                Proceed to Checkout
+                Proceed to Checkout (Coming Soon)
               </button>
             </div>
           </div>

@@ -32,8 +32,13 @@ interface CartProviderProps {
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>(() => {
     // Load cart from localStorage on initialization
-    const savedCart = localStorage.getItem('cart');
-    return savedCart ? JSON.parse(savedCart) : [];
+    try {
+      const savedCart = localStorage.getItem('cart');
+      return savedCart ? JSON.parse(savedCart) : [];
+    } catch (error) {
+      console.warn('Failed to parse cart data from localStorage:', error);
+      return [];
+    }
   });
   
   const [discount, setDiscount] = useState(0);
