@@ -183,7 +183,7 @@ flowchart TD
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/CaroByte/copilot_agent_mode-ubiquitous-couscous-main.git
+git clone <repository-url>
 cd copilot_agent_mode-ubiquitous-couscous-main
 
 # 2. Install dependencies
@@ -206,7 +206,7 @@ The application will be available at:
 ### Method 1: Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/CaroByte/copilot_agent_mode-ubiquitous-couscous-main.git
+git clone <repository-url>
 cd copilot_agent_mode-ubiquitous-couscous-main
 
 # Install all dependencies (API + Frontend)
@@ -225,7 +225,7 @@ npm run build
 ### Method 3: Docker (Containerized)
 ```bash
 # Clone and navigate to project
-git clone https://github.com/CaroByte/copilot_agent_mode-ubiquitous-couscous-main.git
+git clone <repository-url>
 cd copilot_agent_mode-ubiquitous-couscous-main
 
 # Build and run with Docker Compose
