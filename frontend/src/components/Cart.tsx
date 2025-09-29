@@ -118,7 +118,12 @@ export default function Cart() {
                                 type="number"
                                 min="1"
                                 value={item.quantity}
-                                onChange={(e) => updateQuantity(item.productId, parseInt(e.target.value) || 1)}
+                                onChange={(e) => {
+                                  const newQuantity = parseInt(e.target.value);
+                                  if (newQuantity >= 1) {
+                                    updateQuantity(item.productId, newQuantity);
+                                  }
+                                }}
                                 className={`w-16 text-center rounded border ${darkMode ? 'bg-gray-700 border-gray-600 text-light' : 'bg-white border-gray-300 text-gray-900'} py-1`}
                                 aria-label={`Quantity of ${item.name}`}
                               />

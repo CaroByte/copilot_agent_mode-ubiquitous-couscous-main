@@ -33,13 +33,22 @@ const CartContext = createContext<CartContextType | null>(null);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>(() => {
-    const savedCart = localStorage.getItem('cart');
-    return savedCart ? JSON.parse(savedCart) : [];
+    try {
+      const savedCart = localStorage.getItem('cart');
+      return savedCart ? JSON.parse(savedCart) : [];
+    } catch (error) {
+      console.warn('Failed to load cart from localStorage:', error);
+      return [];
+    }
   });
 
   // Save to localStorage whenever items change
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(items));
+    try {
+      localStorage.setItem('cart', JSON.stringify(items));
+    } catch (error) {
+      console.warn('Failed to save cart to localStorage:', error);
+    }
   }, [items]);
 
   // Calculate derived values

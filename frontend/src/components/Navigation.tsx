@@ -85,7 +85,7 @@ export default function Navigation() {
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
               >
-                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.35 2.65a1 1 0 01-1.41 0L1 13m6 0a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z" />
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.68 1.68a2 2 0 01-2.83 0L1 13m6 0a2 2 0 104 0m0 0a2 2 0 104 0" />
               </svg>
               {itemCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
