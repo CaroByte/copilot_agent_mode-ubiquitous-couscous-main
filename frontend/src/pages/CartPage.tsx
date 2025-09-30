@@ -20,10 +20,6 @@ export default function CartPage() {
     alert(`Coupon "${couponCode}" functionality not yet implemented`);
   };
 
-  const handleUpdateCart = () => {
-    alert('Cart updated successfully!');
-  };
-
   const handleCheckout = () => {
     // TODO: Implement checkout functionality
     alert('Checkout functionality not yet implemented');
@@ -145,31 +141,23 @@ export default function CartPage() {
               </div>
             </div>
 
-            {/* Coupon and Update Cart Section */}
-            <div className="mt-6 flex flex-col sm:flex-row gap-4">
-              <div className="flex-1">
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    placeholder="Coupon code"
-                    value={couponCode}
-                    onChange={(e) => setCouponCode(e.target.value)}
-                    className={`flex-1 px-4 py-2 ${darkMode ? 'bg-gray-800 text-light border-gray-700' : 'bg-white text-gray-800 border-gray-300'} rounded-lg border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors duration-300`}
-                  />
-                  <button
-                    onClick={handleApplyCoupon}
-                    className="bg-primary hover:bg-accent text-white px-6 py-2 rounded-lg transition-colors"
-                  >
-                    Apply Coupon
-                  </button>
-                </div>
+            {/* Coupon Section */}
+            <div className="mt-6">
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="Coupon code"
+                  value={couponCode}
+                  onChange={(e) => setCouponCode(e.target.value)}
+                  className={`flex-1 px-4 py-2 ${darkMode ? 'bg-gray-800 text-light border-gray-700' : 'bg-white text-gray-800 border-gray-300'} rounded-lg border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors duration-300`}
+                />
+                <button
+                  onClick={handleApplyCoupon}
+                  className="bg-primary hover:bg-accent text-white px-6 py-2 rounded-lg transition-colors"
+                >
+                  Apply Coupon
+                </button>
               </div>
-              <button
-                onClick={handleUpdateCart}
-                className={`${darkMode ? 'bg-gray-700 hover:bg-gray-600 text-light' : 'bg-gray-200 hover:bg-gray-300 text-gray-800'} px-6 py-2 rounded-lg transition-colors duration-300`}
-              >
-                Update Cart
-              </button>
             </div>
           </div>
 

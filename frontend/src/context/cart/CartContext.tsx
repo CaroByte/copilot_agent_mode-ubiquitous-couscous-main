@@ -27,8 +27,12 @@ const CartContext = createContext<CartContextType | null>(null);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>(() => {
-    const savedCart = localStorage.getItem('cart');
-    return savedCart ? JSON.parse(savedCart) : [];
+    try {
+      const savedCart = localStorage.getItem('cart');
+      return savedCart ? JSON.parse(savedCart) : [];
+    } catch {
+      return [];
+    }
   });
 
   useEffect(() => {
@@ -80,11 +84,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
   };
 
   const getDiscount = () => {
-    return getSubtotal() * 0.05; // 5% discount
+    const DISCOUNT_RATE = 0.05; // 5% discount
+    return getSubtotal() * DISCOUNT_RATE;
   };
 
   const getShipping = () => {
-    return getSubtotal() > 100 ? 0 : 10; // Free shipping over $100
+    const FREE_SHIPPING_THRESHOLD = 100;
+    const SHIPPING_COST = 10;
+    return getSubtotal() > FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
   };
 
   const getTotal = () => {
