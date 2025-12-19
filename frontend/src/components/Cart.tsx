@@ -87,7 +87,7 @@ export default function Cart() {
                               type="number"
                               min="1"
                               value={item.quantity}
-                              onChange={(e) => updateQuantity(item.productId, parseInt(e.target.value) || 1)}
+                              onChange={(e) => updateQuantity(item.productId, Math.max(1, parseInt(e.target.value) || 1))}
                               className={`w-20 px-3 py-2 ${darkMode ? 'bg-gray-700 text-light border-gray-600' : 'bg-white text-gray-800 border-gray-300'} rounded-lg border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none`}
                             />
                           </td>
@@ -149,7 +149,7 @@ export default function Cart() {
                 </div>
                 
                 <div className="flex justify-between items-center">
-                  <span className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Discount(5%)</span>
+                  <span className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Discount (5%)</span>
                   <span className={`${darkMode ? 'text-light' : 'text-gray-800'} font-semibold`}>-${getDiscount().toFixed(2)}</span>
                 </div>
                 
