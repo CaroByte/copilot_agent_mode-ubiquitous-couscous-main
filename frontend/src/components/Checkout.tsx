@@ -22,10 +22,10 @@ export default function Checkout() {
     setError(null);
 
     try {
-      // Create order
+      // Create order - using timestamp with random component to reduce collision risk
       const orderData = {
-        orderId: Date.now(), // Generate a unique order ID
-        branchId: 1, // Default branch
+        orderId: Date.now() + Math.floor(Math.random() * 1000),
+        branchId: 1, // TODO: Should be retrieved from user context/settings
         orderDate: new Date().toISOString(),
         name: 'Customer Order',
         description: `Order with ${items.length} product(s)`,
@@ -34,12 +34,9 @@ export default function Checkout() {
 
       await axios.post(`${api.baseURL}${api.endpoints.orders}`, orderData);
 
-      // Clear the cart
+      // Clear the cart and navigate
       clearCart();
-
-      // Navigate to success page or products
-      alert('Order placed successfully!');
-      navigate('/products');
+      navigate('/products', { state: { orderSuccess: true } });
     } catch (err) {
       console.error('Error placing order:', err);
       setError('Failed to place order. Please try again.');
