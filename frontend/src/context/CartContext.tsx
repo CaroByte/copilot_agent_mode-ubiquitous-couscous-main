@@ -1,5 +1,9 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
+// Cart configuration constants
+const DISCOUNT_RATE = 0.05; // 5% discount
+const SHIPPING_COST = 10; // Fixed shipping cost
+
 interface Product {
   productId: number;
   name: string;
@@ -84,13 +88,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const getDiscount = () => {
     const subtotal = getSubtotal();
-    // 5% discount on subtotal
-    return subtotal * 0.05;
+    return subtotal * DISCOUNT_RATE;
   };
 
   const getShipping = () => {
-    // Fixed shipping cost
-    return items.length > 0 ? 10 : 0;
+    return items.length > 0 ? SHIPPING_COST : 0;
   };
 
   const getCartTotal = () => {

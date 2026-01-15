@@ -80,7 +80,7 @@ export default function Cart() {
                       <th className={`px-4 py-3 text-left text-sm font-semibold ${darkMode ? 'text-light' : 'text-gray-800'}`}>Remove</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-700">
+                  <tbody className={`divide-y ${darkMode ? 'divide-gray-700' : 'divide-gray-200'}`}>
                     {items.map((item, index) => {
                       const itemPrice = item.discount 
                         ? item.price * (1 - item.discount)
@@ -190,7 +190,7 @@ export default function Cart() {
                 </div>
                 
                 <div className="flex justify-between items-center">
-                  <span className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Discount(5%)</span>
+                  <span className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Discount (5%)</span>
                   <span className={`${darkMode ? 'text-light' : 'text-gray-800'} font-semibold`}>
                     -${getDiscount().toFixed(2)}
                   </span>
