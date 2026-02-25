@@ -85,6 +85,20 @@ To showcase extended capabilities:
    - `MCP: List servers` -> `github` -> `Start server`
 3. Configure with a GitHub PAT (required for GitHub MCP server)
 
+## 🤖 Agentic Workflows
+
+This repository uses centralized agentic workflows from [`agentic-repo-workflows`](https://github.com/CaroByte/agentic-repo-workflows) for AI-powered automation:
+
+| Workflow | Trigger | Description |
+|----------|---------|-------------|
+| 📚 Continuous Documentation | PR opened/updated | Detects documentation drift and suggests updates |
+| ✍️ Issue Quality Enhancer | Issue opened | Improves issue descriptions with AI assistance |
+| 🏷️ Label Beautifier | Manual dispatch | Standardizes and beautifies repository labels |
+| 🏷️ Smart Labeler | Issue/PR opened or edited | Automatically applies relevant labels |
+| 💡 Copilot Suggester | Manual dispatch | Generates improvement suggestions as discussions |
+
+> **Setup**: Add a `COPILOT_PAT` secret to this repository with a GitHub PAT that has Copilot access.
+
 ## 📚 Documentation
 
 - [Detailed Architecture](./docs/architecture.md)
