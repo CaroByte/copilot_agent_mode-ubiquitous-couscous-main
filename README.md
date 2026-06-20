@@ -70,6 +70,12 @@ erDiagram
    ```bash
    npm run dev
    ```
+4. Run the tests:
+   ```bash
+   npm run test          # all tests
+   npm run test:api      # API tests only
+   npm run test:frontend # Frontend tests only
+   ```
 
 Or use the VS Code tasks:
 - `Cmd/Ctrl + Shift + P` -> `Run Task` -> `Build All`
