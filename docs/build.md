@@ -89,8 +89,17 @@ This will start both the API and Frontend in development mode with the integrate
 # Run all tests across all workspaces
 npm run test
 
-# Run tests for a specific workspace
-npm run test --workspace=api
+# Run only API tests
+npm run test:api
+
+# Run only Frontend tests
+npm run test:frontend
+
+# Run Frontend tests in watch mode
+npm run test:watch --workspace=frontend
+
+# Run Frontend tests with coverage report
+npm run test:coverage --workspace=frontend
 ```
 
 ### Linting
