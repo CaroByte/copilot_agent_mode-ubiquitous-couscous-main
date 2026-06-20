@@ -91,6 +91,14 @@ npm run test
 
 # Run tests for a specific workspace
 npm run test --workspace=api
+npm run test --workspace=frontend
+
+# Run tests in watch mode (frontend)
+npm run test:watch --workspace=frontend
+
+# Run tests with coverage
+npm run test:coverage --workspace=api
+npm run test:coverage --workspace=frontend
 ```
 
 ### Linting
