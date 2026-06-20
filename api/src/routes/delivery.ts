@@ -108,6 +108,10 @@ const router = express.Router();
 
 let deliveries: Delivery[] = [...seedDeliveries];
 
+export const resetDeliveries = () => {
+  deliveries = [...seedDeliveries];
+};
+
 // Create a new delivery
 router.post('/', (req, res) => {
   const newDelivery: Delivery = req.body;
